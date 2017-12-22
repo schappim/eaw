@@ -125,6 +125,7 @@ a - All users
 - - Remove permissions
 ```
 
+
 Numerical with octets (e.g. `chmod 700`):
 While our decimal digits go from 0-9, octets go from 0-7 (skipping the numbers 8 and 9).
 
