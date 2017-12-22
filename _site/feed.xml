@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-12-23T10:23:07+11:00</updated><id>http://localhost:4000/</id><title type="html">Extreme Automation Workshop Blog</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Meet Sinatra</title><link href="http://localhost:4000/jekyll/update/2017/12/23/sinatra.html" rel="alternate" type="text/html" title="Meet Sinatra" /><published>2017-12-23T09:16:43+11:00</published><updated>2017-12-23T09:16:43+11:00</updated><id>http://localhost:4000/jekyll/update/2017/12/23/sinatra</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2017/12/23/sinatra.html">&lt;p&gt;Sinatra is a domain-specific language (DSL) for quickly creating web applications in Ruby with minimal effort.&lt;/p&gt;
+
+&lt;p&gt;A domain-specific language (DSL) is a computer language specialized to a particular application domain. This is in contrast to a general-purpose language (GPL), which is broadly applicable across domains.&lt;/p&gt;
+
+&lt;p&gt;Sinatra is available as a &lt;strong&gt;Ruby Gem&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;ruby-gems&quot;&gt;Ruby Gems&lt;/h2&gt;
+
+&lt;p&gt;RubyGems is a package manager for the Ruby programming language that provides a standard format for distributing Ruby programs and libraries, a tool designed to easily manage the installation of gems, and a server for distributing them.&lt;/p&gt;
+
+&lt;p&gt;The command line tool for installing gems is called &lt;code class=&quot;highlighter-rouge&quot;&gt;gem&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;where-can-i-find-ruby-gems&quot;&gt;Where can I find Ruby Gems?&lt;/h4&gt;
+
+&lt;p&gt;You can find Ruby Gems over at &lt;a href=&quot;https://rubygems.org&quot;&gt;https://rubygems.org&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;installing-sinatra&quot;&gt;Installing Sinatra&lt;/h2&gt;
+
+&lt;p&gt;We can install &lt;code class=&quot;highlighter-rouge&quot;&gt;sinatra&lt;/code&gt; with the command:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem install sinatra
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;I like to add the flags:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;--verbose&lt;/code&gt; which shows me more inforamtion.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;--no-ri&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;-no-rdoc&lt;/code&gt; which installs the gem without generating and installing documentation. This dramatically speeds up the installation process.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;ri&lt;/strong&gt; is (more or less) Ruby’s version of man pages, serving up API information from the command line. &lt;strong&gt;RDoc&lt;/strong&gt; is the embedded documentation generator for the Ruby programming language.&lt;/p&gt;
+
+&lt;p&gt;My finall command would be:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem install sinatra --verbose --no-ri --no-rdoc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;script src=&quot;https://asciinema.org/a/9qCwpmpXfCgjrObp79bHB5v2V.js&quot; id=&quot;asciicast-9qCwpmpXfCgjrObp79bHB5v2V&quot; data-rows=&quot;25&quot; async=&quot;&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;Ruby is a great language to base domain-specific languages on.&lt;/p&gt;
+
+&lt;p&gt;A basic Sinatra app looks like this:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt; &lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'sinatra'&lt;/span&gt;
+ &lt;span class=&quot;n&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'/frank-says'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+      &lt;span class=&quot;s1&quot;&gt;'Put this in your pipe &amp;amp; smoke it!'&lt;/span&gt;
+ &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;When a user visits &lt;code class=&quot;highlighter-rouge&quot;&gt;http://your-website-here.com/frank-says&lt;/code&gt; they’ll see the text &lt;code class=&quot;highlighter-rouge&quot;&gt;Put this in your pipe &amp;amp; smoke it!&lt;/code&gt; outputted.&lt;/p&gt;
+
+&lt;h4 id=&quot;what-is-http&quot;&gt;What is HTTP?&lt;/h4&gt;
+
+&lt;p&gt;HTTP means HyperText Transfer Protocol. HTTP is the underlying protocol used by the World Wide Web and this protocol defines how messages are formatted and transmitted, and what actions Web servers and browsers should take in response to various commands.&lt;/p&gt;
+
+&lt;h4 id=&quot;http-request-methods&quot;&gt;HTTP Request Methods&lt;/h4&gt;
+
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;get&lt;/code&gt; in the above example is a HTTP request method.&lt;/p&gt;
+
+&lt;p&gt;The GET method requests a representation of the specified resource. Requests using GET should only retrieve data.&lt;/p&gt;
+
+&lt;p&gt;You can find out more about &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods&quot;&gt;HTTP request methods here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The primary or most-commonly-used HTTP request methods are POST, GET, PUT, PATCH, and DELETE.&lt;/p&gt;
+
+&lt;h2 id=&quot;creating-and-running-an-example-sinatra-program&quot;&gt;Creating and running an Example Sinatra Program&lt;/h2&gt;
+
+&lt;h4 id=&quot;writing-the-code&quot;&gt;Writing the Code&lt;/h4&gt;
+
+&lt;script src=&quot;https://asciinema.org/a/Z5FscZp4Hhsv6DmDKsDIUm2IZ.js&quot; id=&quot;asciicast-Z5FscZp4Hhsv6DmDKsDIUm2IZ&quot; data-rows=&quot;25&quot; async=&quot;&quot;&gt;&lt;/script&gt;
+
+&lt;h4 id=&quot;making-the-code-executable&quot;&gt;Making the Code Executable&lt;/h4&gt;
+
+&lt;p&gt;To make the code executable (i.e. so we can run it), we need to tell the operating system (Linux) that the file is meant to be run.&lt;/p&gt;
+
+&lt;p&gt;We do this with the &lt;code class=&quot;highlighter-rouge&quot;&gt;chmod&lt;/code&gt; command.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;chmod&lt;/code&gt; command stands for &lt;em&gt;change mode&lt;/em&gt;, this makes sens as we’re changing the mode of the file to be executable.&lt;/p&gt;
+
+&lt;p&gt;To make the &lt;code class=&quot;highlighter-rouge&quot;&gt;app.rb&lt;/code&gt; file executable we run the command:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;chmod +x ./app.rb&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;In this example I make app.rb executable. I’m first doing an &lt;code class=&quot;highlighter-rouge&quot;&gt;ls&lt;/code&gt; so you can see the chage in the permission octets.&lt;/p&gt;
+
+&lt;script src=&quot;https://asciinema.org/a/DumLTpKJg8m8J32mrVQJYnSX8.js&quot; id=&quot;asciicast-DumLTpKJg8m8J32mrVQJYnSX8&quot; data-rows=&quot;25&quot; async=&quot;&quot;&gt;&lt;/script&gt;
+
+&lt;h4 id=&quot;chmod-cheat-sheet&quot;&gt;Chmod Cheat-sheet&lt;/h4&gt;
+
+&lt;p&gt;Symbolic (e.g. &lt;code class=&quot;highlighter-rouge&quot;&gt;chmod +x&lt;/code&gt;)&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;chmod &amp;lt;people&amp;gt;&amp;lt;+/-&amp;gt;&amp;lt;permissions&amp;gt;
+Example: chmod o-w (deny others from editing the file)
+Example: chmod u+rwx (give the owner full control)
+Exmaple: chmod +rwx (give everyone full control)
+Example: chmod +x (allow anyone to execute the file)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Key:
+r - Read
+w - Write
+x - Execute
+
+u - The owner of the file
+g - The group that the file belongs to
+o - Anybody who is not one of the above
+a - All users
+
++ - Add permissions
+- - Remove permissions
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Numerical with octets (e.g. &lt;code class=&quot;highlighter-rouge&quot;&gt;chmod 700&lt;/code&gt;):
+While our decimal digits go from 0-9, octets go from 0-7 (skipping the numbers 8 and 9).&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;                                : The first octet represents permissions for the owner.
+        r w x  T                : The second octet represents permissions for the group.
+Owner:  4 2 1  7                : The third octet represents permissions for everyone else.
+Group:  0 0 0  0                : For each octet, start at 0 and:
+Other:  0 0 0  0                : +4 for read permission.
+                                : +2 for write permission.
+Command: chmod 700              : +1 for execute permission.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;run-the-web-application&quot;&gt;Run the Web Application&lt;/h2&gt;
+
+&lt;p&gt;To run the web application we do:&lt;/p&gt;
+
+&lt;script src=&quot;https://asciinema.org/a/xdhzdwWJ7fU29uo6sQtjlTKKe.js&quot; id=&quot;asciicast-xdhzdwWJ7fU29uo6sQtjlTKKe&quot; data-rows=&quot;25&quot; async=&quot;&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;This will run the application in a manner that is accessable locally.&lt;/p&gt;
+
+&lt;p&gt;When we’re just getting started, we’ll be running Sinatra in our “development environment” this is opposed to our “production environment”.&lt;/p&gt;
+
+&lt;p&gt;To make the application accessible from another machine we need to bind Sinatra to all network cards.&lt;/p&gt;
+
+&lt;p&gt;From the &lt;a href=&quot;http://sinatrarb.com/configuration.html&quot;&gt;Sinatra Docs&lt;/a&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:bind&lt;/code&gt; - server hostname or IP address&lt;/p&gt;
+
+&lt;p&gt;String specifying the hostname or IP address of the interface to listen on when the &lt;code class=&quot;highlighter-rouge&quot;&gt;:run&lt;/code&gt; setting is enabled. The default value in the development environment is ‘localhost’ which means the server is only available from the local machine. In other environments the default is &lt;code class=&quot;highlighter-rouge&quot;&gt;'0.0.0.0'&lt;/code&gt;, which causes the server to listen on all available interfaces.&lt;/p&gt;
+
+&lt;p&gt;To listen on all interfaces in the development environment (for example if you want to test from other computers in your local network) use:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;set :bind, '0.0.0.0'&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Lets go and add this:&lt;/p&gt;
+
+&lt;script src=&quot;https://asciinema.org/a/45oUZvvriCc1gkKoQb6xtWLKr.js&quot; id=&quot;asciicast-45oUZvvriCc1gkKoQb6xtWLKr&quot; data-rows=&quot;25&quot; async=&quot;&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;Now when we run the app it will be accessible from another computer.&lt;/p&gt;
+
+&lt;p&gt;We can access the server by ip address. We can get our public IP address from the command line using:&lt;/p&gt;
+
+&lt;script src=&quot;https://asciinema.org/a/UOdMCDVoawFvr5GAv8cWqCTMJ.js&quot; id=&quot;asciicast-UOdMCDVoawFvr5GAv8cWqCTMJ&quot; data-rows=&quot;25&quot; async=&quot;&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;In this example my ip address is: &lt;code class=&quot;highlighter-rouge&quot;&gt;138.68.2.12&lt;/code&gt;, therefore when running my &lt;code class=&quot;highlighter-rouge&quot;&gt;app.rb&lt;/code&gt; file I would be able to access my web app at: &lt;a href=&quot;http://138.68.2.12/&quot;&gt;http://138.68.2.12/&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><summary type="html">Sinatra is a domain-specific language (DSL) for quickly creating web applications in Ruby with minimal effort.</summary></entry><entry><title type="html">Micro Text Editor</title><link href="http://localhost:4000/jekyll/update/2017/12/23/micro-text-editor.html" rel="alternate" type="text/html" title="Micro Text Editor" /><published>2017-12-23T09:16:43+11:00</published><updated>2017-12-23T09:16:43+11:00</updated><id>http://localhost:4000/jekyll/update/2017/12/23/micro-text-editor</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2017/12/23/micro-text-editor.html">&lt;p&gt;My command line text editor of choice is &lt;code class=&quot;highlighter-rouge&quot;&gt;vi&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;vim&lt;/code&gt; (vi improved), however if you’re new to the command line a more accessible text editor is called &lt;code class=&quot;highlighter-rouge&quot;&gt;micro&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;You can find &lt;a href=&quot;https://github.com/zyedidia/micro&quot;&gt;more about micro here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;installation&quot;&gt;Installation&lt;/h4&gt;
+
+&lt;p&gt;Micro is a relatively new text editor and you won’t be able to install it via &lt;code class=&quot;highlighter-rouge&quot;&gt;apt&lt;/code&gt; yet. In contrast &lt;code class=&quot;highlighter-rouge&quot;&gt;vi&lt;/code&gt; was first released in 1976!&lt;/p&gt;
+
+&lt;p&gt;To install the micro run the following:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;curl https://getmic.ro | bash&lt;/code&gt;&lt;/p&gt;
+
+&lt;script src=&quot;https://asciinema.org/a/s80TEbnBRQLO2f9JP7clNTzmF.js&quot; id=&quot;asciicast-s80TEbnBRQLO2f9JP7clNTzmF&quot; data-rows=&quot;25&quot; async=&quot;&quot;&gt;&lt;/script&gt;
+
+&lt;h4 id=&quot;commands&quot;&gt;Commands&lt;/h4&gt;
+
+&lt;p&gt;The commands for &lt;code class=&quot;highlighter-rouge&quot;&gt;micro&lt;/code&gt; are similar to the default Windows keybaord shortcuts with:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ctl+s&lt;/code&gt; to &lt;strong&gt;save&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ctl+q&lt;/code&gt; to &lt;strong&gt;quit&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ctl+o&lt;/code&gt; to &lt;strong&gt;open&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ctl+z&lt;/code&gt; to &lt;strong&gt;undo&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I’ll be using &lt;code class=&quot;highlighter-rouge&quot;&gt;micro&lt;/code&gt; on the command line because command line text editors are easier to capture using &lt;a href=&quot;asciinema.org&quot;&gt;asciinema&lt;/a&gt; (the tool I’m using for capturing the command line).&lt;/p&gt;</content><author><name></name></author><summary type="html">My command line text editor of choice is vi or vim (vi improved), however if you’re new to the command line a more accessible text editor is called micro.</summary></entry><entry><title type="html">Setting up our Environment</title><link href="http://localhost:4000/jekyll/update/2017/12/23/setting-up-environment.html" rel="alternate" type="text/html" title="Setting up our Environment" /><published>2017-12-23T08:07:43+11:00</published><updated>2017-12-23T08:07:43+11:00</updated><id>http://localhost:4000/jekyll/update/2017/12/23/setting-up-environment</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2017/12/23/setting-up-environment.html">&lt;p&gt;For hacking around I like to use &lt;a href=&quot;https://www.digitalocean.com&quot;&gt;Digital Ocean&lt;/a&gt; (based out of the) and &lt;a href=&quot;https://www.binarylane.com.au&quot;&gt;Binary Lane&lt;/a&gt; (if my project is sensitive to latency).&lt;/p&gt;
+
+&lt;p&gt;I like to use &lt;a href=&quot;https://www.ubuntu.com&quot;&gt;Ubuntu&lt;/a&gt; Servers as they’re well supported.&lt;/p&gt;
+
+&lt;h2 id=&quot;ssh-ing-to-our-server&quot;&gt;SSH-ing to our Server&lt;/h2&gt;
+
+&lt;p&gt;We connect to our server using SSH (Secure Shell).&lt;/p&gt;
+
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;ssh&lt;/code&gt; command takes the format:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ssh username@server.com
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;When we use this command we’ll be prompted to enter a password each time.&lt;/p&gt;
+
+&lt;p&gt;We can get around this by creating using &lt;em&gt;SSH Keys&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;creating-an-ssh-key&quot;&gt;Creating an SSH Key&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ssh-keygen -t rsa
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Your private key is saved to the &lt;code class=&quot;highlighter-rouge&quot;&gt;id_rsa&lt;/code&gt; file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;.ssh&lt;/code&gt; directory and is used to verify the public key you use belongs to the same account.&lt;/p&gt;
+
+&lt;h4 id=&quot;installing-your-ssh-key&quot;&gt;Installing your SSH Key&lt;/h4&gt;
+
+&lt;p&gt;Your public key is saved to the &lt;code class=&quot;highlighter-rouge&quot;&gt;id_rsa.pub&lt;/code&gt;; file and is the key. You can save this key to the clipboard by running this:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pbcopy &amp;lt; ~/.ssh/id_rsa.pub
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Note: &lt;code class=&quot;highlighter-rouge&quot;&gt;pbcopy&lt;/code&gt; is a mac command that takes content from the command line and puts it on your clipboard.&lt;/p&gt;
+
+&lt;p&gt;You could also do this command:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cat ~/.ssh/id_rsa.pub | pbcopy
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;to achieve the same result.&lt;/p&gt;
+
+&lt;script src=&quot;https://asciinema.org/a/sRUGCGwXxLazcEIhw9RQhbbVa.js&quot; id=&quot;asciicast-sRUGCGwXxLazcEIhw9RQhbbVa&quot; data-rows=&quot;25&quot; async=&quot;&quot;&gt;&lt;/script&gt;
+
+&lt;h4 id=&quot;actually-sshing-into-your-box&quot;&gt;Actually SSHing into your Box&lt;/h4&gt;
+
+&lt;script src=&quot;https://asciinema.org/a/JUmgYZXUPOwu2U1GwBZpA6x20.js&quot; id=&quot;asciicast-JUmgYZXUPOwu2U1GwBZpA6x20&quot; data-rows=&quot;25&quot; async=&quot;&quot;&gt;&lt;/script&gt;
+
+&lt;h4 id=&quot;further-reading&quot;&gt;Further Reading&lt;/h4&gt;
+
+&lt;p&gt;Here are some links on creating an SSH Key for your OS of choice:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.joyent.com/public-cloud/getting-started/ssh-keys/generating-an-ssh-key-manually/manually-generating-your-ssh-key-in-windows&quot;&gt;Creating a SSH Key on Windows&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.joyent.com/public-cloud/getting-started/ssh-keys/generating-an-ssh-key-manually/manually-generating-your-ssh-key-in-mac-os-x&quot;&gt;Creating a SSH Key on MacOS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;installing-software&quot;&gt;Installing Software&lt;/h2&gt;
+
+&lt;p&gt;To install software on Ubuntu we use the &lt;code class=&quot;highlighter-rouge&quot;&gt;apt&lt;/code&gt; command.&lt;/p&gt;
+
+&lt;p&gt;APT stands for &lt;em&gt;Advanced Package Tool&lt;/em&gt;, and it handles the installation and removal of software on Debian and other Linux distributions (hear &lt;a href=&quot;https://www.ubuntu.com&quot;&gt;Ubuntu&lt;/a&gt;, &lt;a href=&quot;https://www.raspberrypi.org/downloads/raspbian/&quot;&gt;Raspbian&lt;/a&gt; for Raspberry Pi etc). We are using Ubuntu.&lt;/p&gt;
+
+&lt;p&gt;We need to run &lt;code class=&quot;highlighter-rouge&quot;&gt;apt&lt;/code&gt; as &lt;code class=&quot;highlighter-rouge&quot;&gt;root&lt;/code&gt;. If we’re logging in as &lt;code class=&quot;highlighter-rouge&quot;&gt;root&lt;/code&gt; we can just use the program, but if we’re a normal user we need to use &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;The program &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo&lt;/code&gt; stands for &lt;em&gt;super user do&lt;/em&gt;, and it elevates the privledges of a standard user to that of a super user. Use &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo&lt;/code&gt; before a command to do this.&lt;/p&gt;
+
+&lt;p&gt;On your Mac or PC try this:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;whoami
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Then try&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo whoami
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;notice a difference?&lt;/p&gt;
+
+&lt;script src=&quot;https://asciinema.org/a/OLOqEZNLyJXOexNTukrj6yEQS.js&quot; id=&quot;asciicast-OLOqEZNLyJXOexNTukrj6yEQS&quot; data-rows=&quot;25&quot; async=&quot;&quot;&gt;&lt;/script&gt;
+
+&lt;h4 id=&quot;apt-get-update-and-apt-get-upgrade&quot;&gt;apt-get update and apt-get upgrade&lt;/h4&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;apt-get update&lt;/code&gt; doesn’t actually install new versions of software. Instead, it updates the package lists for upgrades for packages that need upgrading, as well as new packages that have just come to the repositories.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;apt-get upgrade&lt;/code&gt; upgrades packages that need upgrading.
+&lt;script src=&quot;https://asciinema.org/a/bKsQzccIAJmBzjNHI6cOpBO3t.js&quot; id=&quot;asciicast-bKsQzccIAJmBzjNHI6cOpBO3t&quot; data-rows=&quot;25&quot; async=&quot;&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;installing-packages&quot;&gt;Installing Packages&lt;/h4&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get install cmatrix&lt;/code&gt;&lt;/p&gt;
+
+&lt;script src=&quot;https://asciinema.org/a/UDFnamQl20QYq42UuuAq1XOEo.js&quot; id=&quot;asciicast-UDFnamQl20QYq42UuuAq1XOEo&quot; data-rows=&quot;25&quot; async=&quot;&quot;&gt;&lt;/script&gt;
+
+&lt;h4 id=&quot;removing-packages&quot;&gt;Removing Packages&lt;/h4&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt remove cmatrix&lt;/code&gt;&lt;/p&gt;
+
+&lt;script src=&quot;https://asciinema.org/a/7tmiyLg1ppVwNtOw4E4rvOzRE.js&quot; id=&quot;asciicast-7tmiyLg1ppVwNtOw4E4rvOzRE&quot; data-rows=&quot;25&quot; async=&quot;&quot;&gt;&lt;/script&gt;
+
+&lt;h4 id=&quot;installing-packages-1&quot;&gt;Installing Packages&lt;/h4&gt;
+
+&lt;p&gt;We need to install &lt;code class=&quot;highlighter-rouge&quot;&gt;ruby2.3-dev&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;build-essential&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Ruby is a programming language (god’s gift to programmers) and the &lt;code class=&quot;highlighter-rouge&quot;&gt;build-essential&lt;/code&gt; package has a series of compiler and tools required for building compiled software.&lt;/p&gt;
+
+&lt;script src=&quot;https://asciinema.org/a/Bcxv4gpI9E4AD7TfpQhcoRCQ1.js&quot; id=&quot;asciicast-Bcxv4gpI9E4AD7TfpQhcoRCQ1&quot; data-rows=&quot;25&quot; async=&quot;&quot;&gt;&lt;/script&gt;</content><author><name></name></author><summary type="html">For hacking around I like to use Digital Ocean (based out of the) and Binary Lane (if my project is sensitive to latency).</summary></entry><entry><title type="html">Extreme Automation Workshop Blog!</title><link href="http://localhost:4000/jekyll/update/2017/12/23/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Extreme Automation Workshop Blog!" /><published>2017-12-23T08:04:43+11:00</published><updated>2017-12-23T08:04:43+11:00</updated><id>http://localhost:4000/jekyll/update/2017/12/23/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2017/12/23/welcome-to-jekyll.html">&lt;p&gt;Thanks for coming to the “Extreme Automation Workshop”. 
+I’ll periodically add to this blog w/ notes.&lt;/p&gt;
+
+&lt;p&gt;Cheers,&lt;/p&gt;
+
+&lt;p&gt;Marcus&lt;/p&gt;</content><author><name></name></author><summary type="html">Thanks for coming to the “Extreme Automation Workshop”. I’ll periodically add to this blog w/ notes.</summary></entry></feed>
