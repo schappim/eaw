@@ -1,0 +1,177 @@
+---
+layout: post
+title:  "Meet Sinatra"
+date:   2017-12-23 09:16:43 +1100
+categories: jekyll update
+---
+
+Sinatra is a domain-specific language (DSL) for quickly creating web applications in Ruby with minimal effort.
+
+A domain-specific language (DSL) is a computer language specialized to a particular application domain. This is in contrast to a general-purpose language (GPL), which is broadly applicable across domains.
+
+Sinatra is available as a **Ruby Gem**.
+
+## Ruby Gems
+
+RubyGems is a package manager for the Ruby programming language that provides a standard format for distributing Ruby programs and libraries, a tool designed to easily manage the installation of gems, and a server for distributing them. 
+
+The command line tool for installing gems is called `gem`.
+
+
+#### Where can I find Ruby Gems? 
+
+You can find Ruby Gems over at [https://rubygems.org](https://rubygems.org)
+
+## Installing Sinatra
+
+We can install `sinatra` with the command: 
+
+```
+gem install sinatra
+```
+
+I like to add the flags:
+
+`--verbose` which shows me more inforamtion. 
+
+`--no-ri` and ``-no-rdoc`` which installs the gem without generating and installing documentation. This dramatically speeds up the installation process.
+
+__ri__ is (more or less) Ruby's version of man pages, serving up API information from the command line. __RDoc__ is the embedded documentation generator for the Ruby programming language.
+
+
+My finall command would be:
+
+```
+gem install sinatra --verbose --no-ri --no-rdoc
+```
+
+<script src="https://asciinema.org/a/9qCwpmpXfCgjrObp79bHB5v2V.js" id="asciicast-9qCwpmpXfCgjrObp79bHB5v2V"   data-rows="25" async></script> 
+
+
+Ruby is a great language to base domain-specific languages on.
+
+A basic Sinatra app looks like this:
+
+{% highlight ruby %}
+ require 'sinatra'
+ get '/frank-says' do
+      'Put this in your pipe & smoke it!'
+ end
+{% endhighlight %}
+
+When a user visits `http://your-website-here.com/frank-says` they'll see the text `Put this in your pipe & smoke it!` outputted.
+
+#### What is HTTP?
+
+HTTP means HyperText Transfer Protocol. HTTP is the underlying protocol used by the World Wide Web and this protocol defines how messages are formatted and transmitted, and what actions Web servers and browsers should take in response to various commands.
+
+#### HTTP Request Methods
+
+The `get` in the above example is a HTTP request method.
+
+The GET method requests a representation of the specified resource. Requests using GET should only retrieve data.
+
+You can find out more about [HTTP request methods here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods). 
+
+The primary or most-commonly-used HTTP request methods are POST, GET, PUT, PATCH, and DELETE.
+
+## Creating and running an Example Sinatra Program
+
+#### Writing the Code
+
+<script src="https://asciinema.org/a/Z5FscZp4Hhsv6DmDKsDIUm2IZ.js" id="asciicast-Z5FscZp4Hhsv6DmDKsDIUm2IZ" data-rows="25" async></script> 
+
+#### Making the Code Executable
+
+To make the code executable (i.e. so we can run it), we need to tell the operating system (Linux) that the file is meant to be run. 
+
+We do this with the `chmod` command. 
+
+The `chmod` command stands for _change mode_, this makes sens as we're changing the mode of the file to be executable. 
+
+To make the `app.rb` file executable we run the command: 
+
+```chmod +x ./app.rb```
+
+In this example I make app.rb executable. I'm first doing an `ls` so you can see the chage in the permission octets.
+
+<script src="https://asciinema.org/a/DumLTpKJg8m8J32mrVQJYnSX8.js" id="asciicast-DumLTpKJg8m8J32mrVQJYnSX8"   data-rows="25" async></script> 
+
+
+#### Chmod Cheat-sheet
+
+Symbolic (e.g. `chmod +x`)
+
+```
+chmod <people><+/-><permissions>
+Example: chmod o-w (deny others from editing the file)
+Example: chmod u+rwx (give the owner full control)
+Exmaple: chmod +rwx (give everyone full control)
+Example: chmod +x (allow anyone to execute the file)
+```
+
+```
+Key:
+r - Read
+w - Write
+x - Execute
+
+u - The owner of the file
+g - The group that the file belongs to
+o - Anybody who is not one of the above
+a - All users
+
++ - Add permissions
+- - Remove permissions
+```
+
+Numerical with octets (e.g. `chmod 700`):
+While our decimal digits go from 0-9, octets go from 0-7 (skipping the numbers 8 and 9).
+
+```
+                                : The first octet represents permissions for the owner.
+        r w x  T                : The second octet represents permissions for the group.
+Owner:  4 2 1  7                : The third octet represents permissions for everyone else.
+Group:  0 0 0  0                : For each octet, start at 0 and:
+Other:  0 0 0  0                : +4 for read permission.
+                                : +2 for write permission.
+Command: chmod 700              : +1 for execute permission.
+```
+
+## Run the Web Application
+
+To run the web application we do:
+
+<script src="https://asciinema.org/a/xdhzdwWJ7fU29uo6sQtjlTKKe.js" id="asciicast-xdhzdwWJ7fU29uo6sQtjlTKKe"   data-rows="25" async></script> 
+
+This will run the application in a manner that is accessable locally. 
+
+When we're just getting started, we'll be running Sinatra in our "development environment" this is opposed to our "production environment".
+
+To make the application accessible from another machine we need to bind Sinatra to all network cards.
+
+From the [Sinatra Docs](http://sinatrarb.com/configuration.html): 
+
+`:bind` - server hostname or IP address
+
+String specifying the hostname or IP address of the interface to listen on when the `:run` setting is enabled. The default value in the development environment is 'localhost' which means the server is only available from the local machine. In other environments the default is `'0.0.0.0'`, which causes the server to listen on all available interfaces.
+
+To listen on all interfaces in the development environment (for example if you want to test from other computers in your local network) use:
+
+`set :bind, '0.0.0.0'`
+
+Lets go and add this: 
+
+<script src="https://asciinema.org/a/45oUZvvriCc1gkKoQb6xtWLKr.js" id="asciicast-45oUZvvriCc1gkKoQb6xtWLKr"   data-rows="25" async></script> 
+
+Now when we run the app it will be accessible from another computer. 
+
+We can access the server by ip address. We can get our public IP address from the command line using: 
+
+<script src="https://asciinema.org/a/UOdMCDVoawFvr5GAv8cWqCTMJ.js" id="asciicast-UOdMCDVoawFvr5GAv8cWqCTMJ"   data-rows="25" async></script> 
+
+In this example my ip address is: `138.68.2.12`, therefore when running my `app.rb` file I would be able to access my web app at: [http://138.68.2.12/](http://138.68.2.12/).
+
+
+
+
